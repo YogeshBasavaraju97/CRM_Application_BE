@@ -5,7 +5,7 @@ const app = express(); //middleware to body parser
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173", "https://inspiring-cajeta-bbf63a.netlify.app"], credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
