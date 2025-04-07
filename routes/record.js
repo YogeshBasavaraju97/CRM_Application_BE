@@ -23,7 +23,9 @@ recordRoute.get("/admin/key-metrics", userAuth, async (req, res) => {
 
 recordRoute.get("/admin/call-records", userAuth, async (req, res) => {
   try {
-    const callRecords = await Lead.find({ status: "connected " }.sort({ updatedAt: -1 })).populate('telecaller', 'name');
+    const callRecords = await Lead.find({ status: "connected" })
+      .sort({ updatedAt: -1 })
+      .populate('telecaller', 'name');
     res.status(200).json({ callRecords });
 
   } catch (error) {
