@@ -34,16 +34,14 @@ leadRoutes.patch("/update/lead/:id", userAuth, async (req, res) => {
   try {
     const { address } = req.body;
     const _id = req.params.id;
-    console.log(address);
 
-    console.log(_id);
 
     const lead = await Lead.findByIdAndUpdate(
       _id,
       { $set: { address: address } },
       { new: true }
     );
-    console.log(lead);
+
 
     if (!lead) {
       return res.status(404).json({ error: 'Lead not found' });
@@ -92,9 +90,6 @@ leadRoutes.patch("/update/status/:id", userAuth, async (req, res) => {
     const { _id } = req.user;
     const { status, response } = req.body;
     const leadId = req.params.id;
-    console.log(status, response);
-
-    console.log(_id);
 
     const lead = await Lead.findByIdAndUpdate(
       leadId,
