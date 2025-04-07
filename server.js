@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 
 
-const auth = require("./routes/auth");
+const auth = require("./routes/auth.js");
 const leads = require("./routes/leads.js");
 const admin = require("./routes/record.js");
 

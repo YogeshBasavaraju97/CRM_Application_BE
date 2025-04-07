@@ -1,8 +1,7 @@
 const express = require("express");
-
 const { validateSignUp } = require("../util/validateSignUp");
 const bcrypt = require("bcrypt");
-const User = require("../models/user");
+const User = require("../models/User");
 const { validateLogin } = require("../util/validateLogin");
 const userAuth = require("../middleware/auth");
 
